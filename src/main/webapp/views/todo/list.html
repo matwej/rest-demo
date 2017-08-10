@@ -1,0 +1,29 @@
+<div class="row">
+	<a class="btn btn-primary pull-right" href="todos/new">New Todo</a>
+</div>
+<div class="row">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="todo in todos">
+						<td><span ng-bind="todo.name"></span></td>
+						<td><span ng-bind="todo.done"></span></td>
+						<td>
+							<a href="todos/{{todo.uid}}" class="btn btn-success">Show</a>
+							<a href="todos/edit/{{todo.uid}}" class="btn btn-warning">Edit</a>
+							<button ng-click="deleteTodo(todo.uid)" class="btn btn-danger">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
